@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('first') {
+            steps {
+                sh 'git clone https://github.com/vvbondar101/ansible-vector-role.git'
+                sh 'cd ansible-vector-rol'
+                sh 'molecule test -s centos_7'
+            }
+        }
+    }
+}
